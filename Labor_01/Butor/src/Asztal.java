@@ -1,29 +1,13 @@
 
-public class Asztal {
-	protected int szelesseg;
-	protected int hosszusag;
-	protected int magassag;
-	
-	protected Anyag anyag;
+public class Asztal extends Butor {
 	
 	Asztal(int szelesseg, int hosszusag, int magassag, Anyag anyag)
 	{
-		this.szelesseg = szelesseg;
-		this.hosszusag = hosszusag;
-		this.magassag = magassag;
-		this.anyag = anyag;
+		super(szelesseg, hosszusag, magassag, anyag);
+		
+		tipusNev = "Magor";
 	}
+	
 
-	public int getMagassag() {
-		return magassag;
-	}
-
-	public int getHosszusag() {
-		return hosszusag;
-	}
-
-	public int getSzelesseg() {
-		return szelesseg;
-	}
 	
 }
