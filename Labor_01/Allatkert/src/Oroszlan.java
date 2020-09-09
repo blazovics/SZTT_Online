@@ -1,7 +1,9 @@
 
-public class Oroszlan {
-	String name;
+public class Oroszlan extends Nagymacska implements IHangotAd {
+	//String name;
 	private int suly;
+	
+	protected int elegedett;
 	
 	public static String fajnev = "Oroszlán";
 	
@@ -15,6 +17,7 @@ public class Oroszlan {
 		}
 		
 		suly += mennyiseg;
+		elegedett++;
 		this.goToSleep();
 		
 		return mennyiseg;
@@ -22,5 +25,11 @@ public class Oroszlan {
 	
 	private void goToSleep() {
 		System.out.println("Zzzz..");
+	}
+
+	@Override
+	public void AddjHangot() {
+		System.out.println("Roar");
+		
 	}
 }
