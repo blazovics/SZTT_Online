@@ -1,13 +1,21 @@
+import java.time.LocalDateTime;
 
 public class KinyithatoAsztal extends Asztal {
 
 	private boolean kinyitva = false;
 	private int teljesHossz;
 	
+	KinyithatoAsztal(int teljesHossz) {
+		this(new KozosTulajdonsagok(90,75,200,Anyag.BUKK,GyartasiHely.GYOR,LocalDateTime.now()),teljesHossz);
+	}
 	
+	KinyithatoAsztal(GyartasiHely gyartasiHely, LocalDateTime gyartasiIdo, int teljesHossz) {
+		this(new KozosTulajdonsagok(90,200,75,Anyag.BUKK,gyartasiHely,gyartasiIdo),teljesHossz);
+
+	}
 	
-	KinyithatoAsztal(int szelesseg, int hosszusag, int magassag, Anyag anyag, int teljesHossz) {
-		super(szelesseg, hosszusag, magassag, anyag);
+	KinyithatoAsztal(KozosTulajdonsagok params, int teljesHossz) {
+		super(params);
 		this.teljesHossz = teljesHossz;
 		tipusNev = "Hunor";
 	}
@@ -24,7 +32,7 @@ public class KinyithatoAsztal extends Asztal {
 			return teljesHossz;
 		}
 		else {
-			return hosszusag;
+			return getHosszusag();
 		}
 	}
 	

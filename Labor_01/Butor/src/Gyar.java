@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 
 public class Gyar {
 
@@ -6,7 +7,7 @@ public class Gyar {
 
 		Raktar r = new Raktar();
 		
-		r.addButor(new Asztal(10,10,10,Anyag.BUKK));
+		r.addButor(new Asztal(LocalDateTime.now(),GyartasiHely.GYOR));
 	}
 
 }

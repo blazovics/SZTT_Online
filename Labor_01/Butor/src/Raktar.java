@@ -13,16 +13,28 @@ public class Raktar {
 		butorLista.remove(b);
 	}
 	
-	public int keresTipusSzerint(String tipus)
+	public List<Butor> keresTipusSzerint(String tipus)
 	{
-		int darab = 0;
+		List<Butor> butors = new ArrayList<Butor>();
 		for(Butor b: butorLista)
 		{
 			if(b.tipusNev.equals(tipus))
 			{
-				darab++;
+				butors.add(b);
 			}
 		}
-		return darab;
+		return butors;
+	}
+	
+	public Butor keresIDSzerint(int id)
+	{
+		for(Butor b: butorLista)
+		{
+			if(b.getId() == id)
+			{
+				return b;
+			}
+		}
+		return null;
 	}
 }

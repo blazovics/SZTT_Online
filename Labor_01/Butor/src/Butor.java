@@ -1,18 +1,17 @@
+import java.time.LocalDateTime;
 
 public abstract class Butor {
 
-	protected int szelesseg;
-	protected int hosszusag;
-	protected int magassag;
+	protected KozosTulajdonsagok kozosTulajdonsagok;
 	
-	protected Anyag anyag;
+	private int id;
+	private static int sequence = 0;
 	
-	Butor(int szelesseg, int hosszusag, int magassag, Anyag anyag)
+	Butor(KozosTulajdonsagok params)
 	{
-		this.szelesseg = szelesseg;
-		this.hosszusag = hosszusag;
-		this.magassag = magassag;
-		this.anyag = anyag;
+		this.kozosTulajdonsagok = params;
+		
+		this.id = ++sequence;
 	}
 	
 	protected String tipusNev;
@@ -22,15 +21,27 @@ public abstract class Butor {
 	}
 
 	public int getMagassag() {
-		return magassag;
+		return kozosTulajdonsagok.magassag;
 	}
 
 	public int getHosszusag() {
-		return hosszusag;
+		return kozosTulajdonsagok.hosszusag;
 	}
 
 	public int getSzelesseg() {
-		return szelesseg;
+		return kozosTulajdonsagok.szelesseg;
+	}
+	
+	public GyartasiHely getGyartasiHely() {
+		return kozosTulajdonsagok.gyartasiHely;
+	}
+	
+	public LocalDateTime getGyartasiIdo() {
+		return kozosTulajdonsagok.gyartasiIdo;
+	}
+
+	public int getId() {
+		return id;
 	}
 	
 }
